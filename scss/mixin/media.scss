@@ -1,0 +1,12 @@
+$sizes: pc, sp;
+
+$breakpoint: (
+    "pc": "screen and (min-width: 769px)",
+    "sp": "screen and (max-width: 768px)",
+) !default;
+
+@mixin device($size: pc) {
+    @media #{ map-get( $breakpoint, $size ) } {
+        @content;
+    }
+}
